@@ -1,0 +1,2 @@
+data/aria2/data/*
+!data/aria2/data/.gitkeep

@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  aria2:
+    # image: ...
+    build: .
+    restart: unless-stopped
+    volumes:
+      - ./data/aria2/config:/config
+      - ./data/aria2/data:/data
+      - type: bind
+        source: /mnt/data/shared/downloads
+        target: /downloads
+    user: "1000:1000"
+    command: bash -c "aria2c --conf-path /config/aria2.conf"
+    #network_mode: host
+    ports:
+      - 6881:6881
+      - 6881:6881/udp
+      - 6800:6800
