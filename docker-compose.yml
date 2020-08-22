@@ -12,7 +12,6 @@ services:
         target: /downloads
     user: "1000:1000"
     command: bash -c "aria2c --conf-path /config/aria2.conf"
-    #network_mode: host
     ports:
       - 6881:6881
       - 6881:6881/udp
